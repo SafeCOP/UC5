@@ -49,7 +49,7 @@ Vagrant.configure(2) do |config|
   #
   #   # Customize the amount of memory on the VM:
     vb.memory = "4096"
-    vb.customize [ 'modifyvm', :id, '--cpus', '4']
+    vb.customize [ 'modifyvm', :id, '--cpus', '2']
     vb.customize [ 'modifyvm', :id, '--uartmode1', 'disconnected']
     vb.customize [ 'modifyvm', :id, '--vram', '16']
     vb.customize [ 'modifyvm', :id, '--pae', 'off']
@@ -80,10 +80,12 @@ git clone https://github.com/eclipse/sumo.git
 cd sumo
 git checkout v0_29_0
 git checkout -b v0_29_0-safecop
+cd sumo
+make -f Makefile.cvs
 ./configure
 make
 make install
-cd ..
+cd ../../
 
 # Before making a omnetpp repository for safecop, we used to download the source
 # directly from the developers website, but this was very long, so we now use
