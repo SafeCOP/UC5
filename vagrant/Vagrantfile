@@ -79,27 +79,35 @@ Vagrant.configure(2) do |config|
 git clone https://github.com/eclipse/sumo.git
 cd sumo
 git checkout v0_29_0
+git checkout -b v0_29_0-safecop
 ./configure
 make
 make install
 cd ..
 
-wget --no-check-certificate -c -r -np -nd -H --referer https://omnetpp.org https://omnetpp.org/component/jdownloads/send/32-release-older-versions/2305-omnetpp-50-linux
-mv 2305-omnetpp-50-linux 2305-omnetpp-50-linux.gz
-tar xvf 2305-omnetpp-50-linux.gz
-chown -R ubuntu.ubuntu sumo
-chown -R ubuntu.ubuntu omnetpp-5.0
-chown -R ubuntu.ubuntu veins
-cd omnetpp-5.0
-git init
-git add -A
-git commit -m "Initial commit for omnetpp-5.0"
+# Before making a omnetpp repository for safecop, we used to download the source
+# directly from the developers website, but this was very long, so we now use
+# our own git mirror of the source
+# wget --no-check-certificate -c -r -np -nd -H --referer https://omnetpp.org https://omnetpp.org/component/jdownloads/send/32-release-older-versions/2305-omnetpp-50-linux
+# mv 2305-omnetpp-50-linux 2305-omnetpp-50-linux.gz
+# tar xvf 2305-omnetpp-50-linux.gz
+# cd omnetpp-5.0
+# git init
+# git add -A
+# git commit -m "Initial commit for omnetpp-5.0"
+#
+git clone https://polimicg.org/gitlab/fez/omnetpp.git
+cd omnetpp
+git checkout omnetpp-5.0-safecop
 source setenv -f
 ./configure
 make
 cd ..
 
 git clone https://polimicg.org/gitlab/fez/veins.git
+cd veins
+git checkout veins-4.5-safecop
+cd ..
 EOF
     chown ubuntu:ubuntu /home/ubuntu/setup.sh
     chmod +x /home/ubuntu/setup.sh
