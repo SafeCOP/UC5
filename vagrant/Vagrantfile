@@ -84,8 +84,8 @@ cd sumo
 make -f Makefile.cvs
 ./configure
 make
-make install
 cd ../../
+echo "export SUMO_HOME=/home/ubuntu/sumo/sumo/" >> ~/.bashrc
 
 # Before making a omnetpp repository for safecop, we used to download the source
 # directly from the developers website, but this was very long, so we now use
