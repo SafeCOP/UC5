@@ -66,22 +66,31 @@ The Veins repositories already includes the modifications and the extensions dev
 You are now ready to run the simulations.
 
 In order to do that, you have to do the following:
-1. Install SUMO system-wide:
+
+1.Install SUMO system-wide:
+
 ```shell
 cd sumo/sumo
 sudo make install
 ```
-2. Start SUMO from Veins, so that it listens for requests from OMNeT++ in the backround. To do that run the following commands:
+
+2.Start SUMO from Veins, so that it listens for requests from OMNeT++ in the backround. To do that run the following commands:
+
 ```shell
 cd veins
 ./sumo-launchd.py -vv -c sumo-gui
 ```
-3. In another terminal open the OMNeT++ IDE:
+
+3.In another terminal open the OMNeT++ IDE:
+
 ```shell
 cd omnetpp-5.0
 source setenv
 omnetpp
 ```
+
 The last command will open Eclipse with the OMNeT++ plugin.
-4. From the OMNeT++ IDE import the veins directory
-5. Run the simulation. This will open two windows: the first for the OMNeT++ network simulation, the second for the SUMO vehicle simulation. The second will not show until you hit 'Play' in the OMNeT++ simulation window.
+
+4.From the OMNeT++ IDE import the veins directory
+
+5.Run the simulation. This will open two windows: the first for the OMNeT++ network simulation, the second for the SUMO vehicle simulation. The second will not show until you hit 'Play' in the OMNeT++ simulation window.
