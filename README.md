@@ -1,4 +1,4 @@
-# SAFECOP
+# SAFECOP UC5: SIMULATION TOOL
 
 This is a repository to setup the simulation environment for the *SAFECOP project*.
 
