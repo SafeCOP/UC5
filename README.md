@@ -70,7 +70,7 @@ In order to do that, you have to do the following:
 1.Install SUMO system-wide:
 
 ```shell
-cd sumo/sumo
+cd sumo
 sudo make install
 ```
 
