@@ -82,7 +82,7 @@ git checkout -b v0_29_0-safecop
 make -f Makefile.cvs
 ./configure
 make
-cd ../../
+cd ..
 echo "export SUMO_HOME=/home/ubuntu/sumo/" >> ~/.bashrc
 
 # Before making a omnetpp repository for safecop, we used to download the source
