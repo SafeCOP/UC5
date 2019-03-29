@@ -78,9 +78,7 @@ Vagrant.configure(2) do |config|
 #!/bin/bash
 git clone https://github.com/SafeCOP/sumo.git
 cd sumo
-git checkout v0_29_0
 git checkout -b v0_29_0-safecop
-cd sumo
 make -f Makefile.cvs
 ./configure
 make
